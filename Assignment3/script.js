@@ -1,5 +1,6 @@
 const st = document.getElementById('start');
 const stop = document.getElementById('stop');
+const code = document.getElementById('code');
 function genrateRandom() {
   const s = '0123456789ABCDEF';
   let color = '#';
@@ -12,7 +13,10 @@ let p = null;
 st.addEventListener('click', () => {
   if(!p)  
   p = setInterval(() => {
-    document.querySelector('body').style.background = genrateRandom();
+    let c=genrateRandom();
+    document.querySelector('body').style.background = c;
+    code.textContent=`Color Code is: ${c}`;
+
   }, 1000);
 });
 stop.addEventListener('click', () => {
